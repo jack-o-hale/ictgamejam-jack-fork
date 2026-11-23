@@ -216,7 +216,7 @@ export default class GameScene extends Phaser.Scene {
                 if (spr.x < -50) {
                     cull = true;
                     spr.cullMe = true;
-                    spr.destroy();
+                    spr.kill();
                 }
             }, this);
 

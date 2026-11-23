@@ -27,12 +27,33 @@ export default class PreloaderScene extends Phaser.Scene {
         // show the loading splash screen
         //var loadingScreen = this.add.image(0, 0, 'loader-image');
         //this.cameras.main.centerOn(0, 0);
-
+        const characterValue = Number(document.getElementById('hiddenCharacterSelectValue').value);
 
         this.load.image('ground', 'img/ground.png');
         this.load.image('hole', 'img/hole.png');
         this.load.image('hole-ground', 'img/hole_ground.png');
-        this.load.spritesheet('player', 'img/player.png', {frameWidth: 18, frameHeight: 18});
+        switch(characterValue) {
+            case 1:
+                this.load.spritesheet('player', 'img/player_brian.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            case 2:
+                this.load.spritesheet('player', 'img/player_christen.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            case 3:
+                this.load.spritesheet('player', 'img/player_jack.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            case 4:
+                this.load.spritesheet('player', 'img/player_jarvis.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            case 5:
+                this.load.spritesheet('player', 'img/player_julian.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            case 6:
+                this.load.spritesheet('player', 'img/player_kenny.png', {frameWidth: 18, frameHeight: 18});
+                break;
+            default:
+                this.load.spritesheet('player', 'img/player.png', {frameWidth: 18, frameHeight: 18});
+        }
         this.load.spritesheet('scenery', 'img/scenery.png', {frameWidth: 36, frameHeight: 18});
         this.load.image('symbols', 'img/symbols.png');
 
